@@ -1,0 +1,45 @@
+.imgfondo{
+    background-image: url(/proyect2/img/whitw3.jpg);
+}
+.user{
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+}
+.contra{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.btnproyecto2{
+    margin-left: 600px;
+    margin-top: 20px;
+}
+.titulo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: rgb(86, 31, 97);
+    font-size: medium;
+    margin-left: 900px;
+}
+.ingresarboton .ingresarbtn{
+    margin-top: 20px;
+    width: 120px;
+    height: 40px;
+    margin-left: 615px;
+    background-color: rgb(236, 241, 255);
+    border-radius: 6px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    color: rgb(25, 30, 61);
+}
+.prfcontra{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;}
+.btnclick{
+    margin-left: 20px;
+}
