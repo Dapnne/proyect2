@@ -7,15 +7,21 @@
     <link rel="stylesheet" href="/proyect2/img/tareas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body >
+  
     <h1 class="tituloh1">ADMINISTRADOR DE TAREAS</h1>
     <div class="mayordiv"> 
 
      <div class="divtareas">
-        <h1><i class="fa-regular fa-calendar-days"></i> TAREAS</h1>
+        <h1 class="titulotarea"><i class="fa-regular fa-calendar-days"></i> TAREAS</h1>
         <div  class="agregarE">
-        <input id="agregar" type="text">
-        <input type="date" id="Prioridad" required. />
+        <input id="agregar" type="text" placeholder="TAREAS PENDIENTES">
+    
+        <select id="mySelect">
+          <option value="alta">ALTA</option>
+          <option value="baja">BAJA</option>
+          <option value="media">MEDIA</option>
+        </select>
         <button id="boton">AGREGAR TAREAS</button>
          </div>
      <div id="contenedordetareas">
@@ -26,9 +32,9 @@
 
     <div class="diveventos">
         <div class="agregareventos">
-         <h1><i class="fa-solid fa-list-check"></i> EVENTOS</h1>
-        <input id="agregareventos" type="text">
-        <input type="date" id="fechadeevento" required. />
+         <h1 class="tituloevento" ><i class="fa-solid fa-list-check"></i> EVENTOS</h1>
+        <input id="agregareventos" type="text" placeholder="AGREGA EVENTOS">
+         <input type="date" id="fechaInput" required. />
         <button id="botoneventos">AGREGAR EVENTOS</button>
          </div>
         <div id="contenedordeeventos">

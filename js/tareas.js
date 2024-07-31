@@ -1,108 +1,109 @@
+//------------------- TAREAS --------------------//
+// ---------------campos de entrada-------------///
 const agregar = document.getElementById("agregar");
-const boton =document.getElementById("boton");
-const contenedorTarea= document.getElementById("contenedordetareas");
-let tareasInput=document.getElementById("agregareventos");
+const boton = document.getElementById("boton");
+const contenedorTarea = document.getElementById("contenedordetareas");
+const tareaInput = document.getElementById("agregareventos");
+const tipoSelect = document.getElementById("mySelect"); 
+let listaTareas = JSON.parse(localStorage.getItem("tareas")) || [];
 
-let tareasVacia=[];
-let listaTarea = JSON.parse(localStorage.getItem("tareas")) || [];
+function mostrarTareas() { //contenedor que obtiene todo el contenido
+    contenedorTarea.innerHTML = ''; 
+    listaTareas.forEach((tarea, index) => {
+        let pagregar = document.createElement("p");//boton de crear elemento 
+        let bEliminar = document.createElement("button");//boton para eliminar
+        bEliminar.innerHTML = "ELIMINAR";//se muestre en pantalla de tareas
+        let vEditar = document.createElement("button");//boton de editar
+        vEditar.innerHTML = "EDITAR";//se muestra en pantalla
 
- boton.addEventListener ("click",function () {
-     let tareaData ={
-        tarea:tareasInput.value,
-        Selection:tipoSelect.value
-     }
+        pagregar.innerHTML = `${tarea.tarea} - ${tarea.Selection}`; //se imprime a dentro de la interfaz
+        contenedorTarea.appendChild(pagregar); //agrega todo dentro de contenedor
+        contenedorTarea.appendChild(bEliminar);//agrega todo dentro de contenedor
+        contenedorTarea.appendChild(vEditar);//agrega todo dentro de contenedor
 
-listaTarea.push(tareaData)
-localStorage.setItem("tareas", JSON.stringify(listaTarea))
+        bEliminar.addEventListener("click", function () { //boton que elimina los elementos que se crearon
+            listaTareas.splice(index, 1);
+            localStorage.setItem("tareas", JSON.stringify(listaTareas));
+            mostrarTareas();
+        });
 
-    let pagregar = document.createElement("p");
-    let bEliminar = document.createElement("button");
-    bEliminar.innerHTML="ELIMINAR";
+        vEditar.addEventListener("click", function () { //boton de editar, manda un mensaje ariiba de pantalla
+            let nuevoTexto = prompt("Digite el nuevo texto", tarea.tarea);
+            if (nuevoTexto !== null) {
+                listaTareas[index].tarea = nuevoTexto;
+                localStorage.setItem("tareas", JSON.stringify(listaTareas));
+                mostrarTareas();
+            }
+        });
+    });
+}
 
-    let vEditar=document.createElement("button")
-    vEditar.innerHTML="EDITAR";
-    
-    let agregarf= agregar.value;
-    pagregar.innerHTML=agregarf;
-    contenedorTarea.appendChild(pagregar);
-    contenedorTarea.appendChild(bEliminar);
-    contenedorTarea.appendChild(vEditar)
 
-    bEliminar.addEventListener("click", function () {
-        bEliminar.remove(this);
-        vEditar.remove(this);
-        pagregar.remove(this)
-    })
-    vEditar.addEventListener("click", function () {
-        let nuevoTexto= prompt("Digite el nuevo texto")
-        pagregar.innerHTML = nuevoTexto;
-        
-    })
-   })
+boton.addEventListener("click", function () { //boton que manda la info al local
+    let tareaData = {
+        tarea: agregar.value,
+        Selection: tipoSelect.value
+    };
+
+    listaTareas.push(tareaData);
+    localStorage.setItem("tareas", JSON.stringify(listaTareas));
+    mostrarTareas();
+});
+
+mostrarTareas();
 
 //--------------------------EVENTOS------------------------------//
-
+//------------------campos de entrada----------------//
 const agregareventos = document.getElementById("agregareventos");
-const botoneventos =document.getElementById("botoneventos");
-const contenedordeeventos= document.getElementById("contenedordeeventos");
-const fechaInput= document.getElementById("fechadeevento");
+const botoneventos = document.getElementById("botoneventos");
+const contenedordeeventos = document.getElementById("contenedordeeventos");
+const fechaInput = document.getElementById("fechaInput"); 
 
-let eventosObj ={
-    Titulo:"",
-    Fecha:""
+let eventosExistentes = JSON.parse(localStorage.getItem("Eventos")) || [];
+
+function mostrarEventos() { //contenedor que obtiene todo el contenido
+    contenedordeeventos.innerHTML = '';
+    eventosExistentes.forEach((evento, index) => {
+        let pagregar2 = document.createElement("p");//boton de crear elemento 
+        let fechaCont = document.createElement("p");//boton de crear elemento 
+        let bEliminar2 = document.createElement("button"); //boton que elimina eventos
+        bEliminar2.innerHTML = "ELIMINAR"; //se muestra en pantalla el boton
+        let vEditar2 = document.createElement("button"); //boton de editar
+        vEditar2.innerHTML = "EDITAR";
+
+        pagregar2.innerHTML = evento.Titulo;
+        fechaCont.innerHTML = evento.Fecha;
+        contenedordeeventos.appendChild(pagregar2);
+        contenedordeeventos.appendChild(fechaCont);
+        contenedordeeventos.appendChild(bEliminar2);
+        contenedordeeventos.appendChild(vEditar2);
+
+        bEliminar2.addEventListener("click", function () {
+            eventosExistentes.splice(index, 1);
+            localStorage.setItem("Eventos", JSON.stringify(eventosExistentes));
+            mostrarEventos();
+        });
+
+        vEditar2.addEventListener("click", function () {
+            let nuevoTexto = prompt("Digite el nuevo texto", evento.Titulo);
+            if (nuevoTexto !== null) {
+                eventosExistentes[index].Titulo = nuevoTexto;
+                localStorage.setItem("Eventos", JSON.stringify(eventosExistentes));
+                mostrarEventos();
+            }
+        });
+    });
 }
 
-let eventosVacio=[]; 
-let eventosExistentes = JSON.parse(localStorage.getItem("Eventos"));
+botoneventos.addEventListener("click", function () {
+    let eventoData = {
+        Titulo: agregareventos.value,
+        Fecha: fechaInput.value
+    };
 
-function reiniciareventos() {
-    if (eventosExistentes.length==0 || eventosExistentes==undefined) {
-        localStorage.setItem("Eventos", JSON.stringify(eventosVacio));
-        console.log("Entre");
-    }
-}
-reiniciareventos();
-
-
- botoneventos.addEventListener ("click",function () {
-    let pagregar2 = document.createElement("p");
-    let fechaCont= document.createElement("p");
-    let bEliminar2 = document.createElement("button");
-    bEliminar2.innerHTML="ELIMINAR";
-
-    let vEditar2=document.createElement("button")
-    vEditar2.innerHTML="EDITAR";
-    
-    let agregarj= agregareventos.value;
-    let fechaE= fechaInput.value;
-    pagregar2.innerHTML=agregarj;
-    fechaCont.innerHTML=fechaE;
-    contenedordeeventos.appendChild(pagregar2);
-    contenedordeeventos.appendChild(fechaCont);
-    contenedordeeventos.appendChild(bEliminar2);
-    contenedordeeventos.appendChild(vEditar2)
-
-    bEliminar2.addEventListener("click", function () {
-        bEliminar2.remove(this);
-        vEditar2.remove(this);
-        pagregar2.remove(this);
-        fechaCont.remove(this);
-    })
-
-    vEditar2.addEventListener("click", function () {
-        let nuevoTexto= prompt("Digite el nuevo texto")
-        pagregar2.innerHTML = nuevoTexto;
-    }
-    )
-    eventosObj.Fecha=fechaE;
-    eventosObj.Titulo=agregarj;
-    eventosExistentes.push(eventosObj);
+    eventosExistentes.push(eventoData);
     localStorage.setItem("Eventos", JSON.stringify(eventosExistentes));
-    console.log("Guarde");
+    mostrarEventos(); 
+});
 
-   }
-)
-
-
-
-
+mostrarEventos();
