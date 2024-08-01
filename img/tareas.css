@@ -3,7 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    background-image: url(/proyect2/img/whitw3.jpg);
+}
 .mayordiv{
     display: grid;
     grid-template-columns: auto auto;
@@ -11,11 +13,10 @@
     margin-top: 100px;
     justify-content: center;
 }
-body{
-    background-image: url(/proyect2/img/whitw3.jpg);
-}
 .tituloh1{
- margin-top: 40px;
+color: rgb(117, 15, 112);
+ margin-top: 130px;
+ font-size: 40px;
 display: flex;
 justify-content: center;
 }
@@ -27,7 +28,7 @@ justify-content: center;
     border-radius: 6px;
     font-family: 'Times New Roman', Times, serif;
     font-size: medium;
-    color: rgb(25, 30, 61);
+    color: rgb(7, 54, 23);
 }
 #boton{
     width: 120px;
@@ -38,4 +39,44 @@ justify-content: center;
     font-family: 'Times New Roman', Times, serif;
     font-size: medium;
     color: rgb(25, 30, 61);
+}
+
+#mySelect{
+    background-color: rgb(242, 237, 247);
+    font-size: medium;
+    color: rgb(133, 47, 47);
+}
+#fechaInput{
+    color: white;
+    background-color: rgb(27, 25, 29);
+    font-size: medium;
+}
+.divtareas{
+background-color: rgb(143, 66, 173);
+}
+.titulotarea{
+    text-align: center;
+    color: white;
+}
+#agregar{
+    font-size: medium;
+    height: 40px;
+    width: 200px;
+}
+.diveventos{
+    background-color: rgb(143, 66, 173);
+}
+.tituloevento{
+    text-align: center;
+    color: white;
+}
+#agregareventos{
+    font-size: medium;
+    height: 40px;
+    width: 200px;
+}
+#fechaInput{
+    background-color: rgb(242, 237, 247);
+    font-size: medium;
+    color: rgb(133, 47, 47)
 }

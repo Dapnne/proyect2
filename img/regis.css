@@ -4,116 +4,92 @@
 body{
     background-image: url(/proyect2/img/whitw3.jpg);
 }
+#navegacion .btnregis{
+    width: 120px;
+    height: 40px;
+    margin-left: 30px;
+    background-color: transparent;
+    border: 1px;
+    border-radius: 6px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer;
+    font-size: medium;
+    Color: rgb(118, 30, 145);
+    font-weight: 500;
+    transition: .5s;
+    
+    }
+    #navegacion .btnregis:hover{
+        background-color: rgb(117, 111, 111);
+        Color: rgb(118, 30, 145);}    
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    color: rgb(51, 2, 66);
 }
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 99;
-    
-}
-.lOGO{
-    font-size: 2em;
-    color: black;
-    user-select: none;
-}
-#navegacion a {
-    position: relative;
-    font-size: 1.1em;
-    color: black;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 40px;
-    font-family: 'Times New Roman', Times, serif;
-}
-#navegacion .btnloguin{
-width: 120px;
-height: 40px;
-margin-left: 30px;
-background-color: transparent;
-border: 1px;
-border-radius: 6px;
-font-family: 'Times New Roman', Times, serif;
-cursor: pointer;
-font-size: medium;
-color: black;
-font-weight: 500;
-transition: .5s;
-
-
-}
-#navegacion .btnloguin:hover{
-    background-color: rgb(102, 36, 110);
-    color: #d7dbd5;
-}
-.REGISTRO{
-    margin-top: 5%;
-    color: rgb(128, 128, 128);
-    font-size: 24px;
+#register_Container{
     display: flex;
     justify-content: center;
+    margin-top:40px;
 }
-.inputfield{
-   font-size: 120%;
-    Color: black;
-   display: flex;
-   justify-content: center;
-   margin-top: 50px;
-}
-.boton{
-
-    margin-left: 10PX;
-    font-size: 17px;
-    background-color: white;
-
-}
-.inputfield2{
- font-size: 120%;
-Color: black;
-display: flex;
-margin-top: 20px;
-justify-content: center;
-}
-.imail{
-    margin-left: 10PX;
-    font-size: 17px;
-    background-color: white;
-}
-.inputfield3{
-font-size: 120%;
-Color: black;
-display: flex;
-margin-top: 20px;
-justify-content: center;
-}
-
-.btnclick{
-    margin-left: 20px;
-}
-.click{
-    margin-top: 20px;
-    width: 120px;
-    height: 40px;
-    margin-left: 615px;
-    background-color: rgb(236, 241, 255);
-    border-radius: 6px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: medium;
-    color: rgb(25, 30, 61);
-
-}
-.tituloderegistro{
+.titulo{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: rgb(86, 31, 97);
+    margin-top: 39px;
+    text-align: center;
+     font-size: 40px;
+}
+.BTNCONTRASEÑA{
+    width: 300px;
+    height: 25px;
+    background-color: rgb(227, 235, 235);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 300; 
+}
+.BTNIMAIL{
+    width: 300px;
+    height: 25px;
+    background-color: rgb(227, 235, 235);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 300; 
+}
+.BTNNOMBRE{
+    width: 300px;
+    height: 25px;
+    background-color: rgb(227, 235, 235);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 300; 
+}
+.REGISTRO1{
+
+    width: 200px;
+    height: 25px;
+    background-color: rgb(227, 235, 235);
     font-size: medium;
+    margin-left: 100px;
+}
+.btnregistro{
+    margin-top: 30px;
+    width:400px;
+    height: 25px;
+    background-color:rgb(51, 2, 66);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 300; 
 }
